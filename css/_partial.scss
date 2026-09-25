@@ -1,0 +1,54 @@
+/*Variabler*/
+$bg-color: #f0f0f0;
+$nav-textcolor: #570c52; //fungere 
+$subheadings: #137786;
+$bgsecondary:rgb(187, 227, 229);
+// $footer-color:#000000;
+$primary-color:#f0f1f1;
+$secondary-color: #133833;
+$text-color: #E8752E; // skal tjekke 
+$navbg-color: #f0f0f0fe;// skal tjekke 
+$containerbg: #F5F5F5;//skal tjekke 
+
+
+$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/*Variabler de deklareres i toppen af vores stylesheet og de er globale.
+Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i blokken.*/
+
+/*Mixin er en måde at genbruge kode på. Vi kan tage kode som bruges flere steder og samle det i en mixin*/
+@mixin flex($justify: center, $align: center){
+    /*$justify og $align er parametre/variabler som kan ændres når vores mixin kaldes*/
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin btn($pad:10px 20px 10px 20px){
+
+    background-color: $text-color;
+    color: $bg-color;
+    border: solid 3px $text-color;
+    border-radius: 8px;
+    padding: $pad;
+    text-decoration: none;
+    font-weight: 800;
+    
+}
+
+@mixin link-hover {
+  &:hover {
+    background-color: $footer-color;
+    border: solid 2px $bg-color;
+  }
+}
+
+
+@mixin shadow-hover-focus {
+  transition: all 0.3s ease;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
+}
