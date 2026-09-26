@@ -6,6 +6,17 @@ Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i 
 /*Partial fil hentes ind i style.scss som et modul. Filen er en samling af variabler, mixins og funktioner som kan genbruges*/
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+  color: #333;
+}
+body.dark {
+  background-color: #333;
+  color: #efefef;
+}
+body {
   margin: 0;
 }
 
@@ -178,6 +189,7 @@ body .service-card p {
   margin: 0;
 }
 body .projects {
+  scroll-margin-top: 100px;
   padding: 4rem 0;
 }
 body .projects h2 {
@@ -186,7 +198,6 @@ body .projects h2 {
   letter-spacing: -0.5px;
 }
 body .projects .intro {
-  color: var(--muted);
   margin-bottom: 2.5rem;
 }
 body .project-card {
@@ -291,8 +302,9 @@ body .arrows button:hover {
 }
 
 .contact-section {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  max-width: 800px; /* Begrænser hele sektionen */
+  margin: 2rem auto; /* 2rem top/bund + auto højre/venstre (centrerer) */
+  padding: 0 1rem; /* Luft i siderne på mobil */
 }
 
 #contact-form {

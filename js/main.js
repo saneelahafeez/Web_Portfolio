@@ -25,7 +25,11 @@ class nav {
                     <li><a href="#projekter">${this.projects}</a></li>
                     <li><a href="#" >${this.ommig}</a></li>
                     <li><a href="contact.html" >${this.contact}</a></li>
-                    <li><button><i class="fa-regular fa-moon"></i></button></li>
+                    <li>
+                    <button id="theme-toggle">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                </li>
                 </ul>
                 
             </nav>
@@ -229,11 +233,11 @@ const services = new Services ("Hvad jeg kan","Fra proces til løsning",
 const projects = new Projects(
     "Udvalgte cases",
     "Projekter",
-    "Et udpluk af projekter, hvor jeg har arbejdet med workflow, AI og automation.",
+    "Et udpluk af projekter, hvor jeg har arbejdet med brand identitet, UI/UX og workflows.",
     {
         meta: "AI Adoption · Process Design · 2026",
-        title: "AI Workflow Redesign — Kundeservice",
-        desc: "Kortlagde en kundeservice-afdelings manuelle arbejdsgang og designede en ny proces, hvor AI overtager de gentagne opgaver.",
+        title: "Implementerings værktøj til AI — Forbedret arbejdsprocesser  ",
+        desc: "Jeg har udviklet en AI Playbook – ikke en teknisk manual, men en praktisk hverdagsguide, der gør kunstig intelligens til en naturlig kollega i det daglige arbejde.",
         link: "Read more",
         tags: ["Workflow", "AI Adoption", "Process Design"],
         image: "img/projekt1.png"
@@ -249,6 +253,13 @@ const footer = new Footer(
 
 document.body.innerHTML= navg.getNav() +"<main>" + aboutme.getAbout() + process.getProcess() + services.getServices() + projects.getProjects() + "</main>" + footer.getFooter();
 
+const toggleBtn = document.querySelector("#theme-toggle");
+
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+
+toggleBtn.addEventListener("click", toggleTheme);
 
 /* document.body.innerHTML =
     navg.getNav() +
