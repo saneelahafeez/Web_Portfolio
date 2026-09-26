@@ -195,7 +195,7 @@ class Footer {
 
 
 
-const navg= new nav ("img/LOGO.png", "Forsiden", "Projkter", "Om mig", "Kontakt");
+const navg= new nav ("img/LOGO.png", "Forsiden", "Projekter", "Om mig", "Kontakt");
 // document.body.innerHTML= navg.getNav();
 
 
