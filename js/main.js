@@ -195,8 +195,8 @@ const navg= new nav ("img/LOGO.png", "Forsiden", "Projkter", "Om mig", "Kontakt"
 
 
 const aboutme= new aboutMe ("Saneela Hafeez", 
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsam expedita id ratione tenetur sed optio, voluptatum dignissimos non obcaecati dolorum ullam? Voluptate mollitia quae pariatur qui reprehenderit vel quam?", 
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsam expedita id ratione tenetur sed optio, voluptatum dignissimos non obcaecati dolorum ullam? Voluptate mollitia quae pariatur qui reprehenderit vel quam?", 
+    "Jeg tror på, at teknologi og kreativitet går hånd i hånd. Derfor kombinerer jeg over 20 års erfaring med projektledelse og kommunikation med en passion for digitalt design, content creation og AI-understøttede workflows.", 
+    "Mit er at omsætte komplekse idéer til klart og engagerende indhold – uanset om det er en brand identity, en digital kampagne eller en optimeret arbejdsproces. Jeg bruger teknologien som et værktøj til at skabe rum for det, der virkelig betyder noget: Kreativitet, strategi og menneskelig kontakt. Jeg designer løsninger, der ikke bare ser godt ud, men også gør arbejdsdagen og budskabet bedre.", 
     "Se projekter" , 
     "Kontakt mig",
     "img/profilimg_tech.png");
