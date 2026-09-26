@@ -85,7 +85,10 @@ body .about-me .info-aboutme h1 {
 }
 body .about-me .info-aboutme p {
   line-height: 1.7;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
+}
+body .about-me .info-aboutme strong {
+  color: #3c1763;
 }
 body .about-me .info-aboutme div {
   display: flex;
@@ -206,6 +209,8 @@ body .project-image {
   color: #fff;
   font-weight: 600;
   font-size: 1.1rem;
+  background-size: cover;
+  background-position: center;
 }
 body .project-info {
   padding: 2.5rem;

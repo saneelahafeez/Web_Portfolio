@@ -55,7 +55,7 @@ class aboutMe {
 
             <p>${this.para2}</p>
             <div>
-            <a href="#" id="se-projekter">${this.btn1}</a>
+            <a href="#projekter">${this.btn1}</a></a>
             <a href="contact.html">${this.btn2}</a>
             </div>
 
@@ -128,11 +128,12 @@ class Services {
 
 
 class Projects {
-    constructor(eyebrow, title, intro, project) {
+    constructor(eyebrow, title, intro, project,image) {
         this.eyebrow = eyebrow;
         this.title = title;
         this.intro = intro;
         this.project = project; // { meta, title, desc, link, tags[] }
+        this.image = image; // tilføjet billeder til projekt
     }
 
     getProjects() {
@@ -146,7 +147,7 @@ class Projects {
             <p class="intro">${this.intro}</p>
 
             <article class="project-card">
-                <div class="project-image">
+               <div class="project-image" style="background-image: url('${p.image}');">
                     <span>${p.title}</span>
                 </div>
                 <div class="project-info">
@@ -194,9 +195,9 @@ const navg= new nav ("img/LOGO.png", "Forsiden", "Projkter", "Om mig", "Kontakt"
 // document.body.innerHTML= navg.getNav();
 
 
-const aboutme= new aboutMe ("Saneela Hafeez", 
+const aboutme= new aboutMe ("Teknologi og kreativitet i samspil", 
     "Jeg tror på, at teknologi og kreativitet går hånd i hånd. Derfor kombinerer jeg over 20 års erfaring med projektledelse og kommunikation med en passion for digitalt design, content creation og AI-understøttede workflows.", 
-    "Mit er at omsætte komplekse idéer til klart og engagerende indhold – uanset om det er en brand identity, en digital kampagne eller en optimeret arbejdsproces. Jeg bruger teknologien som et værktøj til at skabe rum for det, der virkelig betyder noget: Kreativitet, strategi og menneskelig kontakt. Jeg designer løsninger, der ikke bare ser godt ud, men også gør arbejdsdagen og budskabet bedre.", 
+    "Jeg omsætte komplekse idéer til klart og engagerende indhold – uanset om det er en <strong>brand identity</strong>, en <strong>digital kampagne</strong> eller en <strong>optimeret arbejdsproces</strong>. Jeg bruger teknologien som et værktøj til at skabe rum for det, der virkelig betyder noget: Kreativitet, strategi og menneskelig kontakt. Jeg designer løsninger, der ikke bare ser godt ud, men også gør arbejdsdagen og budskabet bedre.", 
     "Se projekter" , 
     "Kontakt mig",
     "img/profilimg_tech.png");
@@ -234,7 +235,8 @@ const projects = new Projects(
         title: "AI Workflow Redesign — Kundeservice",
         desc: "Kortlagde en kundeservice-afdelings manuelle arbejdsgang og designede en ny proces, hvor AI overtager de gentagne opgaver.",
         link: "Read more",
-        tags: ["Workflow", "AI Adoption", "Process Design"]
+        tags: ["Workflow", "AI Adoption", "Process Design"],
+        image: "img/projekt1.png"
     }
 );
 

@@ -139,7 +139,12 @@ nav .logo img {
 
         p{
             line-height: 1.7;
-            padding-bottom: 30px;
+            padding-bottom: 15px;
+        }
+
+        strong {
+
+            color: #3c1763;
         }
 
         div{
@@ -274,6 +279,8 @@ body.dark .project-card {
     color: #fff;
     font-weight: 600;
     font-size: 1.1rem;
+    background-size: cover;
+    background-position: center;
 }
 
 .project-info {
