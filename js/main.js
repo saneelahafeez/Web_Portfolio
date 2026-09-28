@@ -245,7 +245,7 @@ const projects = new Projects(
     [ // Her starter arrayet
         {
             meta: "<Strong> Kategori: </strong> Process optimering  |  Workflow & AI  |  2026",
-            title: "At effektivisere rutineopgaver og frigive tid til det, mennesker gør bedst.",
+            title: "At effektivisere rutineopgaver og frigive tid til det, mennesker gør bedST.",
             desc: "Jeg har udviklet en AI Playbook – ikke en teknisk manual, men en praktisk hverdagsguide, der gør kunstig intelligens til en naturlig kollega i det daglige arbejde.",
             link: "Read more",
             tags: ["AI Playbook", "Prompting", "Process Design"],
@@ -254,11 +254,11 @@ const projects = new Projects(
 
         { // Projekt 2
             meta: "<Strong> Kategori: </strong> Brand identitet  |  Markedsundersøgelse  |  2025",
-            title: "LadyBalance",
-            desc: "Et koncept for en hjemmeside til en kattecafe, hvor fokus var på legende design og brugeroplevelse.",
+            title: "LadyBalance - At formidle naturlig velvære fordi ægte balance starter indefra.",
+            desc: "Jeg har udviklet et koncept for LadyBalance – ikke bare en hjemmeside, men en visuel platform, der formidler naturlig balance og indre velvære gennem rolig æstetik og klar struktur.",
             link: "Read more",
             tags: ["Logo design", "SoMe Kampagne", "Design Manual"],
-            image: "img/project2.png" //
+            image: "img/projektto.png" //
         },
         { // Projekt 3
             meta: "<Strong> Kategori: </strong> Branding  |  Content  |  2024",

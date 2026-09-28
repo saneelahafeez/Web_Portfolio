@@ -212,14 +212,6 @@ body body.dark .project-card {
   background-color: var(--card);
 }
 body .project-image {
-  background-color: #2b3a42;
-  display: flex;
-  align-items: flex-end;
-  padding: 2rem;
-  min-height: 320px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.1rem;
   background-size: cover;
   background-position: center;
 }
