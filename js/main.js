@@ -253,12 +253,12 @@ const projects = new Projects(
         },
 
         { // Projekt 2
-            meta: "<Strong> Kategori: </strong> UI/UX  |  Webdesign  |  2025",
-            title: "Cat Cafe Site",
+            meta: "<Strong> Kategori: </strong> Brand identitet  |  Markedsundersøgelse  |  2025",
+            title: "LadyBalance",
             desc: "Et koncept for en hjemmeside til en kattecafe, hvor fokus var på legende design og brugeroplevelse.",
             link: "Read more",
-            tags: ["HTML", "CSS", "JS"],
-            image: "img/projekt2.png" //
+            tags: ["Logo design", "SoMe Kampagne", "Design Manual"],
+            image: "img/project2.png" //
         },
         { // Projekt 3
             meta: "<Strong> Kategori: </strong> Branding  |  Content  |  2024",
