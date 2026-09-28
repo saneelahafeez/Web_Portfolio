@@ -14,34 +14,6 @@
 }
 
 
-
-
-// /* ---------- Theme tokens ---------- */
-// :root,
-// [data-theme="light"] {
-//   --color-bg: #F4EADC;
-//   --color-bg-alt: #DAD9C2;
-//   --color-surface: #ffffff;
-//   --color-text: #1E2E3C;
-//   --color-text-muted: #49483D;
-//   --color-border: rgba(73, 72, 61, 0.2);
-//   --color-accent: #D27E1F;
-//   --color-accent-text: #F4EADC;
-// }
-
-// [data-theme="dark"] {
-//   --color-bg: #1E2E3C;
-//   --color-bg-alt: #223547;
-//   --color-surface: #223547;
-//   --color-text: #F4EADC;
-//   --color-text-muted: #DAD9C2;
-//   --color-border: rgba(218, 217, 194, 0.2);
-//   --color-accent: #D27E1F;
-//   --color-accent-text: #1E2E3C;
-// }
-
-
-
 body{
 
     padding: 0;
@@ -55,7 +27,6 @@ body{
 
     /* 1. Ensure the body spans the full height of the viewport */
     min-height: 100vh;
-
 
 
     /* Læg margin på main i stedet – så headeren kan fylde hele bredden */

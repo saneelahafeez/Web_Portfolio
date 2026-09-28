@@ -73,9 +73,7 @@ class ContactForm {
         </section>`;
     }
 
-    // ─────────────────────────────────────────────
-    // Init — kaldes EFTER render() er indsat i DOM
-    // ─────────────────────────────────────────────
+
     init() {
         this.form = document.querySelector('#contact-form');
         this.feedback = document.querySelector('#form-message');
@@ -85,9 +83,6 @@ class ContactForm {
         }
     }
 
-    // ─────────────────────────────────────────────
-    // Submit — validering med ARIA-feedback
-    // ─────────────────────────────────────────────
     handleSubmit(eventSubmit) {
         eventSubmit.preventDefault();
 
@@ -132,9 +127,6 @@ class ContactForm {
         this.form.reset();
     }
 
-    // ─────────────────────────────────────────────
-    // Hjælpefunktioner
-    // ─────────────────────────────────────────────
 
     // Fjerner fejlmarkering fra alle felter
     clearFieldErrors() {
@@ -175,9 +167,6 @@ class ContactForm {
     }
 }
 
-// ─────────────────────────────────────────────
-// Brug
-// ─────────────────────────────────────────────
 const contactForm = new ContactForm();
 
 document.body.innerHTML =

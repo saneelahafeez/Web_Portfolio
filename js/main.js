@@ -130,26 +130,21 @@ class Services {
     }
 }
 
-
 class Projects {
-    constructor(eyebrow, title, intro, project,image) {
+    constructor(eyebrow, title, intro, projectsData) {
         this.eyebrow = eyebrow;
         this.title = title;
         this.intro = intro;
-        this.project = project; // { meta, title, desc, link, tags[] }
-        this.image = image; // tilføjet billeder til projekt
+        this.projectsData = projectsData; // Nu et array i stedet for et enkelt objekt
+        this.currentIndex = 0; // Starter på det første projekt
     }
 
-    getProjects() {
-        const p = this.project;
+    // Ny metode til at generere HTML for det aktive projekt
+    renderProject() {
+        const p = this.projectsData[this.currentIndex];
         const tagsHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join("");
 
         return `
-        <section class="projects" id="projekter">
-            <p class="eyebrow">${this.eyebrow}</p>
-            <h2>${this.title}</h2>
-            <p class="intro">${this.intro}</p>
-
             <article class="project-card">
                <div class="project-image" style="background-image: url('${p.image}');">
                     <span>${p.title}</span>
@@ -162,16 +157,29 @@ class Projects {
                     <div class="project-tags">${tagsHTML}</div>
                 </div>
             </article>
+        `;
+    }
+
+    getProjects() {
+        return `
+        <section class="projects" id="projekter">
+            <p class="eyebrow">${this.eyebrow}</p>
+            <h2>${this.title}</h2>
+            <p class="intro">${this.intro}</p>
+
+            <!-- Container til projektet, så vi nemt kan udskifte det -->
+            <div id="project-container">
+                ${this.renderProject()}
+            </div>
 
             <div class="project-controls">
                 <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                    <!-- Dots genereres nu dynamisk baseret på antallet af projekter -->
+                    ${this.projectsData.map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}"></span>`).join("")}
                 </div>
                 <div class="arrows">
-                    <button aria-label="Forrige"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button aria-label="Næste"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button id="prev-btn" aria-label="Forrige"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button id="next-btn" aria-label="Næste"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>`;
@@ -234,15 +242,48 @@ const projects = new Projects(
     "Udvalgte cases",
     "Projekter",
     "Et udpluk af projekter, hvor jeg har arbejdet med brand identitet, UI/UX og workflows.",
+    [ // Her starter arrayet
+        {
+            meta: "<Strong> Kategori: </strong> Process optimering  |  Workflow & AI  |  2026",
+            title: "At effektivisere rutineopgaver og frigive tid til det, mennesker gør bedst.",
+            desc: "Jeg har udviklet en AI Playbook – ikke en teknisk manual, men en praktisk hverdagsguide, der gør kunstig intelligens til en naturlig kollega i det daglige arbejde.",
+            link: "Read more",
+            tags: ["AI Playbook", "Prompting", "Process Design"],
+            image: "img/projekt1.png"
+        },
+
+        { // Projekt 2
+            meta: "<Strong> Kategori: </strong> UI/UX  |  Webdesign  |  2025",
+            title: "Cat Cafe Site",
+            desc: "Et koncept for en hjemmeside til en kattecafe, hvor fokus var på legende design og brugeroplevelse.",
+            link: "Read more",
+            tags: ["HTML", "CSS", "JS"],
+            image: "img/projekt2.png" //
+        },
+        { // Projekt 3
+            meta: "<Strong> Kategori: </strong> Branding  |  Content  |  2024",
+            title: "Digital Kampagne",
+            desc: "En kampagne der skulle øge kendskabet til et nyt brand gennem målrettet indhold.",
+            link: "Read more",
+            tags: ["Branding", "SoMe", "Content"],
+            image: "img/projekt3.png" // Husk at ligge et billede ind her
+        }
+    ]
+);
+
+/* const projects = new Projects(
+    "Udvalgte cases",
+    "Projekter",
+    "Et udpluk af projekter, hvor jeg har arbejdet med brand identitet, UI/UX og workflows.",
     {
-        meta: "AI Adoption · Process Design · 2026",
-        title: "Implementerings værktøj til AI — Forbedret arbejdsprocesser  ",
+        meta: "<Strong> Kategori: </strong> Process optimering  |  Workflow & AI  |  2026",
+        title: "At effektivisere rutineopgaver og frigive tid til det, mennesker gør bedst.",
         desc: "Jeg har udviklet en AI Playbook – ikke en teknisk manual, men en praktisk hverdagsguide, der gør kunstig intelligens til en naturlig kollega i det daglige arbejde.",
         link: "Read more",
-        tags: ["Workflow", "AI Adoption", "Process Design"],
+        tags: ["AI Playbook", "Prompting", "Process Design"],
         image: "img/projekt1.png"
     }
-);
+); */
 
 const footer = new Footer(
     "© 2026 Saneela Hafeez",
@@ -253,6 +294,50 @@ const footer = new Footer(
 
 document.body.innerHTML= navg.getNav() +"<main>" + aboutme.getAbout() + process.getProcess() + services.getServices() + projects.getProjects() + "</main>" + footer.getFooter();
 
+
+// --- PROJEKT SLIDER ---
+
+// 1. Find de elementer der skal bruges
+const projectContainer = document.querySelector("#project-container");
+const nextBtn = document.querySelector("#next-btn");
+const prevBtn = document.querySelector("#prev-btn");
+const dots = document.querySelectorAll(".dot");
+
+// 2. Funktion der opdaterer projekt-visningen og prikkerne
+function updateProject() {
+    // Opdater selve HTML'en inde i containeren med det aktive projekt
+    projectContainer.innerHTML = projects.renderProject();
+
+    // Loop igennem alle prikker og sæt "active" på den rigtige
+    dots.forEach((dot, index) => {
+        if (index === projects.currentIndex) {
+            dot.classList.add("active");
+        } else {
+            dot.classList.remove("active");
+        }
+    });
+} // <-- Læg mærke til at funktionen slutter HER. Alt knap-kode skal udenfor.
+
+// 3. Næste knap (UDENFOR updateProject)
+nextBtn.addEventListener("click", () => {
+    if (projects.currentIndex < projects.projectsData.length - 1) {
+        projects.currentIndex++;
+    } else {
+        projects.currentIndex = 0;
+    }
+    updateProject(); // Kalder funktionen for at opdatere visningen
+});
+
+// 4. Forrige knap (UDENFOR updateProject)
+prevBtn.addEventListener("click", () => {
+    if (projects.currentIndex > 0) {
+        projects.currentIndex--;
+    } else {
+        projects.currentIndex = projects.projectsData.length - 1;
+    }
+    updateProject(); // Kalder funktionen for at opdatere visningen
+});
+
 const toggleBtn = document.querySelector("#theme-toggle");
 
 function toggleTheme() {
@@ -260,152 +345,3 @@ function toggleTheme() {
 }
 
 toggleBtn.addEventListener("click", toggleTheme);
-
-/* document.body.innerHTML =
-    navg.getNav() +
-    "<main>" +
-        aboutme.getAbout() +
-        services.getServices() +
-        projects.getProjects() +
-    "</main>" +
-    footer.getFooter(); */
-/* document.body.innerHTML = `${nav.getNav()}
-    <main>
-        ${about.getAbout()}
-        ${services.getServices()}
-        ${projects.getProjects()}
-    </main>
-    ${footer.getFooter()}
-`; */
-
-/* 
-// ============================================================
-//  PROJECTS / Cases
-// ============================================================
-class Projects {
-    constructor(eyebrow, title, intro, project) {
-        this.eyebrow = eyebrow;
-        this.title = title;
-        this.intro = intro;
-        this.project = project; // { meta, title, desc, link, tags[] }
-    }
-
-    getProjects() {
-        const p = this.project;
-        const tagsHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join("");
-
-        return `
-        <section class="projects" id="projekter">
-            <p class="eyebrow">${this.eyebrow}</p>
-            <h2>${this.title}</h2>
-            <p class="intro">${this.intro}</p>
-
-            <article class="project-card">
-                <div class="project-image">
-                    <span>${p.title}</span>
-                </div>
-                <div class="project-info">
-                    <p class="meta">${p.meta}</p>
-                    <h3>${p.title}</h3>
-                    <p>${p.desc}</p>
-                    <a href="#" class="read-more">${p.link}</a>
-                    <div class="project-tags">${tagsHTML}</div>
-                </div>
-            </article>
-
-            <div class="project-controls">
-                <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <div class="arrows">
-                    <button aria-label="Forrige"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button aria-label="Næste"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>`;
-    }
-}
-
-// ============================================================
-//  FOOTER
-// ============================================================
-class Footer {
-    constructor(copy, contact) {
-        this.copy = copy;
-        this.contact = contact;
-    }
-
-    getFooter() {
-        return `
-        <footer>
-            <p>${this.copy}</p>
-            <a href="contact.html">${this.contact}</a>
-        </footer>`;
-    }
-}
-
-// ============================================================
-//  INSTANCER
-// ============================================================
-const nav = new Nav(
-    "Saneela Hafeez",
-    "Forside",
-    "Projekter",
-    "Kontakt"
-);
-
-const about = new AboutMe(
-    "Saneela Hafeez",
-    "AI Workflow & Implementation Specialist",
-    "Jeg kombinerer forretningsforståelse, design og AI til at skabe smartere måder at arbejde på — ved at identificere muligheder, designe effektive workflows og omsætte teknologi til løsninger, der skaber reel værdi for mennesker og virksomheder.",
-    [
-        "AI Implementation",
-        "Workflow",
-        "Automation",
-        "AI Adoption",
-        "Use Cases",
-        "Process Design",
-        "Efficiency",
-        "Human + AI",
-        "Remote Work"
-    ],
-    "Jeg ser mig selv i en rolle som special konsulent der kombinerer forretningsforståelse, design og AI til at skabe smartere måder at arbejde på.",
-    "Se projekter",
-    "Kontakt mig"
-);
-
-
-
-const projects = new Projects(
-    "Udvalgte cases",
-    "Projekter",
-    "Et udpluk af projekter, hvor jeg har arbejdet med workflow, AI og automation.",
-    {
-        meta: "AI Adoption · Process Design · 2026",
-        title: "AI Workflow Redesign — Kundeservice",
-        desc: "Kortlagde en kundeservice-afdelings manuelle arbejdsgang og designede en ny proces, hvor AI overtager de gentagne opgaver.",
-        link: "Read more",
-        tags: ["Workflow", "AI Adoption", "Process Design"]
-    }
-);
-
-const footer = new Footer(
-    "© 2026 Saneela Hafeez",
-    "Kontakt mig"
-);
-
-// ============================================================
-//  RENDER
-// ============================================================
-document.body.innerHTML = `${nav.getNav()}
-    <main>
-        ${about.getAbout()}
-        ${services.getServices()}
-        ${projects.getProjects()}
-    </main>
-    ${footer.getFooter()}
-`;
-
- */
