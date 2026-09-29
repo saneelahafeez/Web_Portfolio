@@ -3,8 +3,8 @@
 // ============================================
 import { nav } from "./classes/nav.js";
 import { aboutMe } from "./classes/aboutMe.js";
-import { processsection } from "./classes/processSection.js";
-import { Services } from "./data/Services.js";
+import { processs } from "./classes/process.js";
+import { Services } from "./classes/Services.js";
 import { Projects } from "./classes/Projects.js";
 import { Footer } from "./classes/Footer.js";
 import { projectsData } from "./data/projects.js";
@@ -24,7 +24,7 @@ const aboutme = new aboutMe(
     "img/profilimg_tech.png"
 );
 
-const process = new processsection(
+const process = new processs(
     "Research",
     "Hard og soft skills",
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsam expedita id ratione tenetur sed optio, voluptatum dignissimos non obcaecati dolorum ullam? Voluptate mollitia quae pariatur qui reprehenderit vel quam?",
