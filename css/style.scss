@@ -3,6 +3,13 @@
 * {
     box-sizing: border-box;
 }
+
+html {
+    overflow-y: scroll;
+    // scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
     
     body {
     background-color: #efefef;
@@ -240,7 +247,7 @@ nav .logo img {
 
 // Projekter 
 .projects {
-    scroll-margin-top: 70px;
+    // scroll-margin-top: 70px;
     padding: 3rem 0;
 
 }
@@ -253,7 +260,7 @@ nav .logo img {
 
 .projects .intro {
     // color: var(--muted);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .project-card {
