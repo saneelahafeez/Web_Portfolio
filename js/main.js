@@ -1,10 +1,10 @@
 // ============================================
 // IMPORTS – hent klasser og data fra andre filer
 // ============================================
-import { nav } from "./classes/Nav.js";
-import { aboutMe } from "./classes/AboutMe.js";
-import { processsection } from "./classes/ProcessSection.js";
-import { Services } from "./classes/Services.js";
+import { nav } from "./classes/nav.js";
+import { aboutMe } from "./classes/aboutMe.js";
+import { processsection } from "./classes/processSection.js";
+import { Services } from "./data/Services.js";
 import { Projects } from "./classes/Projects.js";
 import { Footer } from "./classes/Footer.js";
 import { projectsData } from "./data/projects.js";
