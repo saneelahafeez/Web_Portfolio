@@ -92,6 +92,7 @@ nav .logo img {
 }
 
 
+
 // Hero section
 .about-me{
     display: flex;
@@ -256,7 +257,7 @@ body.dark .project-card {
     // display: flex;
     // align-items: flex-end;
     // padding: 2rem;
-    // min-height: 320px;
+    min-height: 320px;
     // color: #fff;
     // font-weight: 600;
     // font-size: 1.1rem;
@@ -353,9 +354,11 @@ body.dark .project-card {
 }
 
 .arrows button:hover {
-    background-color: var(--card);
+    background-color: var(--card);  
+ }
+
 }
-}
+
 
 
 //  kontakt formular 

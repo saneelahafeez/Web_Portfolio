@@ -147,7 +147,7 @@ class Projects {
         return `
             <article class="project-card">
                <div class="project-image" style="background-image: url('${p.image}');">
-                    <span>${p.title}</span>
+        
                 </div>
                 <div class="project-info">
                     <p class="meta">${p.meta}</p>
@@ -258,7 +258,7 @@ const projects = new Projects(
             desc: "Jeg har udviklet et koncept for LadyBalance – ikke bare en hjemmeside, men en visuel platform, der formidler naturlig balance og indre velvære gennem rolig æstetik og klar struktur.",
             link: "Read more",
             tags: ["Logo design", "SoMe Kampagne", "Design Manual"],
-            image: "img/projektto.png" //
+            image: "img/2project.png" //
         },
         { // Projekt 3
             meta: "<Strong> Kategori: </strong> Branding  |  Content  |  2024",

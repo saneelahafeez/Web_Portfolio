@@ -212,6 +212,7 @@ body body.dark .project-card {
   background-color: var(--card);
 }
 body .project-image {
+  min-height: 320px;
   background-size: cover;
   background-position: center;
 }
