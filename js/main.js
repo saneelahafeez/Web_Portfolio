@@ -114,6 +114,7 @@ class Services {
     getServices() {
         const cardsHTML = this.cards.map(c => `
             <article class="service-card">
+            <i class="${c.icon}"></i>
                 <h3>${c.title}</h3>
                 <p>${c.text}</p>
             </article>
@@ -220,20 +221,25 @@ const process= new processsection ("Research", "process1","Lorem ipsum dolor sit
 const services = new Services ("Hvad jeg kan","Fra proces til løsning",
     [
         {
-            title: "Workflow & Process Design",
-            text: "Kortlægger eksisterende arbejdsgange og designer nye, mere effektive processer."
+            icon: "fa-solid fa-magnifying-glass",  
+            title: "Research",
+            text: "Indledende analyse af opgave, målgruppe og formål sikrer et solidt fundament og en løsning, der rammer rigtigt fra start."
         },
         {
-            title: "AI Implementation",
-            text: "Identifierer use cases og hjælper teams med at tage AI i brug i praksis."
+            
+            icon: "fa-solid fa-chess",    
+            title: "Strategi",
+            text: "Indsigter omsættes til en klar plan og struktur, der skaber retning, overblik og sammenhæng gennem hele forløbet."
         },
         {
-            title: "Automation",
-            text: "Designer automatiserede arbejdsopgaver, der frigiver tid til det, der betyder noget."
+            icon: "fa-solid fa-pen-ruler",   
+            title: "Design",
+            text: "Løsningen udformes med fokus på kvalitet og brugervenlighed – uanset om det gælder visuelt design, content eller workflows."
         },
         {
-            title: "Human + AI",
-            text: "Sikrer, at teknologien understøtter mennesker — ikke omvendt."
+            icon: "fa-solid fa-chart-line", 
+            title: "Optimering",
+            text: "Løbende test, justering og forbedring sikrer, at resultatet ikke blot fungerer, men også skaber værdi over tid."
         }
     ]
 );
@@ -242,7 +248,8 @@ const projects = new Projects(
     "Udvalgte cases",
     "Projekter",
     "Et udpluk af projekter, hvor jeg har arbejdet med brand identitet, UI/UX og workflows.",
-    [ // Her starter arrayet
+    [ // Her starter mit array of projects
+        //projekt 1
         {
             meta: "<Strong> Kategori: </strong> Process optimering  |  Workflow & AI  |  2026",
             title: "At effektivisere rutineopgaver og frigive tid til det, mennesker gør bedST.",
@@ -270,20 +277,6 @@ const projects = new Projects(
         }
     ]
 );
-
-/* const projects = new Projects(
-    "Udvalgte cases",
-    "Projekter",
-    "Et udpluk af projekter, hvor jeg har arbejdet med brand identitet, UI/UX og workflows.",
-    {
-        meta: "<Strong> Kategori: </strong> Process optimering  |  Workflow & AI  |  2026",
-        title: "At effektivisere rutineopgaver og frigive tid til det, mennesker gør bedst.",
-        desc: "Jeg har udviklet en AI Playbook – ikke en teknisk manual, men en praktisk hverdagsguide, der gør kunstig intelligens til en naturlig kollega i det daglige arbejde.",
-        link: "Read more",
-        tags: ["AI Playbook", "Prompting", "Process Design"],
-        image: "img/projekt1.png"
-    }
-); */
 
 const footer = new Footer(
     "© 2026 Saneela Hafeez",

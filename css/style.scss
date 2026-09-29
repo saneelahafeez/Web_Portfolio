@@ -203,6 +203,23 @@ nav .logo img {
     flex-direction: column;
 }
 
+.service-card i {
+    // font-size: 3rem;
+    // color: partial.$subheading;   /* samme farve som dine overskrifter */
+    // margin-bottom: 0.5rem;
+    // display: block;
+    font-size: 2.5rem;
+    color: partial.$subheading;
+    background-color: rgba(27, 164, 185, 0.12);   /* svag teal-baggrund */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
 /* Kortets titel */
 .service-card h3 {
     font-size: 1.1rem;
@@ -357,9 +374,6 @@ body.dark .project-card {
     background-color: var(--card);  
  }
 
-}
-
-
 
 //  kontakt formular 
 
@@ -423,4 +437,5 @@ body.dark .project-card {
             background-color: darken(partial.$text-color, 10%);
         }
     }
+}
 }
