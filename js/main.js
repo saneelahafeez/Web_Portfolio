@@ -7,6 +7,7 @@ import { process } from "./classes/process.js";
 import { Services } from "./classes/Services.js";
 import { Projects } from "./classes/Projects.js";
 import { Footer } from "./classes/Footer.js";
+import { projectsData } from "./data/projects.js"; 
 
 // ============================================
 // OPRET INSTANSER – byg siderne op

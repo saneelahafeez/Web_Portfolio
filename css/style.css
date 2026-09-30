@@ -72,6 +72,22 @@ body nav ul li a {
   color: #137786;
   font-size: 25px;
 }
+body nav ul li a {
+  position: relative;
+}
+body nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #137786;
+  transition: width 0.3s ease;
+}
+body nav ul li a:hover::after {
+  width: 100%;
+}
 body nav .logo img {
   height: 75px;
   width: auto;
@@ -174,6 +190,19 @@ body .service-card i {
   justify-content: center;
   margin-bottom: 1.2rem;
 }
+body .service-card {
+  transition: all 0.3s ease;
+}
+body .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+body .service-card:hover i {
+  transform: scale(1.15);
+}
+body .service-card i {
+  transition: transform 0.3s ease;
+}
 body .service-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -206,8 +235,22 @@ body .project-card {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
-body body.dark .project-card {
-  background-color: var(--card);
+body body.dark .project-card body.dark {
+  background-color: #1a1a1a;
+  color: #eaeaea;
+}
+body body.dark .project-card body.dark .service-card {
+  background-color: #2a2a2a;
+  color: #eaeaea;
+}
+body body.dark .project-card body.dark .project-card {
+  background-color: #2a2a2a;
+}
+body body.dark .project-card body.dark header {
+  background-color: #1a1a1a;
+}
+body body.dark .project-card body.dark a {
+  color: #5dc7d6;
 }
 body .project-image {
   min-height: 320px;
