@@ -20,12 +20,14 @@ const aboutme = new aboutMe(
     "img/profilimg_tech.png"
 );
 
-const myProcess = new process(
-    "Research",
-    "Hard og soft skills",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsam expedita id ratione tenetur sed optio, voluptatum dignissimos non obcaecati dolorum ullam? Voluptate mollitia quae pariatur qui reprehenderit vel quam?",
-    "Hej med dig",
-    "img/my-picture.png"
+const mySkills = new process(
+    "Om mig",
+    "Faglige færdigheder",
+    "Jeg arbejder struktureret og analytisk med fokus på problemløsning, koordinering og kvalitet i opgaveløsningen. Min baggrund inden for eksport, projektkoordinering, kundeservice og digital udvikling giver mig en bred forretningsforståelse og evnen til hurtigt at sætte mig ind i nye komplekse opgaver.",
+    "img/softskills.png",
+    "Kompetancer",
+    "Jeg arbejder struktureret og analytisk med fokus på problemløsning, koordinering og kvalitet i opgaveløsningen. Min baggrund inden for eksport, projektkoordinering, kundeservice og digital udvikling giver mig en bred forretningsforståelse og evnen til hurtigt at sætte mig ind i nye komplekse opgaver.",
+    "img/softskills.png"
 );
 
 const services = new Services("Hvad jeg kan", "Fra proces til løsning", [
@@ -87,7 +89,7 @@ document.body.innerHTML =
     navg.getNav() +
     "<main>" +
     aboutme.getAbout() +
-    myProcess.getProcess() + 
+    mySkills.getProcess() + 
     services.getServices() +
     projects.getProjects() +
     "</main>" +

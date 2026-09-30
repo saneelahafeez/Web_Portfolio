@@ -147,6 +147,31 @@ body .about-me img {
   border-radius: 130px 1px 130px 1px;
   max-width: 100%;
 }
+body .myprocess {
+  scroll-margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .myprocess h1 {
+  font-weight: 700;
+}
+body .myprocess .info-myprocess {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+body .myprocess .info-myprocess div h2 {
+  font-size: 25px;
+}
+body .myprocess .info-myprocess div p {
+  font-size: 18px;
+  margin-right: 25px;
+}
+body .myprocess .info-myprocess img {
+  height: 350px;
+  width: 475px;
+}
 body .services {
   padding: 5rem 0rem;
   max-width: 1400px;

@@ -17,8 +17,8 @@ export class nav {
                 <ul>
                     <li><a href="#">${this.forsiden}</a></li>
                     <li><a href="#projekter">${this.projects}</a></li>
-                    <li><a href="ommig.html">${this.ommig}</a></li>
-                    <li><a href="contact.html">${this.contact}</a></li>
+                 <li><a href="index.html#skills">${this.ommig}</a></li>
+                    <li><a href="./contact.html">${this.contact}</a></li>
                     <li>
                         <button id="theme-toggle">
                             <i class="fa-regular fa-moon"></i>
