@@ -1,6 +1,4 @@
-// ============================================
-// IMPORTS – hent klasser og data fra andre filer
-// ============================================
+//hent klasser
 import { nav } from "./classes/nav.js";
 import { aboutMe } from "./classes/aboutMe.js";
 import { process } from "./classes/process.js";
@@ -9,9 +7,7 @@ import { Projects } from "./classes/Projects.js";
 import { Footer } from "./classes/Footer.js";
 import { projectsData } from "./data/projects.js"; 
 
-// ============================================
-// OPRET INSTANSER – byg siderne op
-// ============================================
+//byg siderne op
 
 const navg = new nav("img/LOGO.png", "Forsiden", "Projekter", "Om mig", "Kontakt");
 
@@ -62,11 +58,30 @@ const projects = new Projects(
     projectsData
 );
 
-const footer = new Footer("© 2026 Saneela Hafeez", "Kontakt mig");
 
-// ============================================
-// INDSÆT I HTML'EN
-// ============================================
+const footer = new Footer(
+    "© 2026 Saneela Hafeez",
+    "Kontakt mig",
+    [
+        {
+            icon: "fa-brands fa-linkedin",
+            link: "https://linkedin.com/in/dit-navn",
+            label: "LinkedIn"
+        },
+        {
+            icon: "fa-brands fa-github",
+            link: "https://github.com/dit-navn",
+            label: "GitHub"
+        },
+        {
+            icon: "fa-brands fa-instagram",
+            link: "https://instagram.com/dit-navn",
+            label: "Instagram"
+        }
+    ]
+);
+
+// indsæt i html
 
 document.body.innerHTML =
     navg.getNav() +
@@ -78,9 +93,7 @@ document.body.innerHTML =
     "</main>" +
     footer.getFooter();
 
-// ============================================
-// PROJEKT SLIDER
-// ============================================
+//projekt slider kort
 
 const projectContainer = document.querySelector("#project-container");
 const nextBtn = document.querySelector("#next-btn");

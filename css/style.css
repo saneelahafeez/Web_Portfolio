@@ -235,22 +235,33 @@ body .project-card {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
-body body.dark .project-card body.dark {
+body body.dark {
   background-color: #1a1a1a;
   color: #eaeaea;
 }
-body body.dark .project-card body.dark .service-card {
+body body.dark .service-card {
   background-color: #2a2a2a;
   color: #eaeaea;
 }
-body body.dark .project-card body.dark .project-card {
+body body.dark .project-card {
   background-color: #2a2a2a;
 }
-body body.dark .project-card body.dark header {
+body body.dark header {
   background-color: #1a1a1a;
 }
-body body.dark .project-card body.dark a {
+body body.dark a {
   color: #5dc7d6;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .project-card {
+  animation: fadeIn 1s ease-out;
 }
 body .project-image {
   min-height: 320px;
@@ -334,6 +345,17 @@ body .arrows button {
 body .arrows button:hover {
   background-color: var(--card);
 }
+body .arrows button {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(19, 119, 134, 0.4);
+  color: #137786;
+}
+body .arrows button:hover {
+  background-color: #137786;
+  color: #fff;
+  transform: scale(1.1);
+  border-color: #137786;
+}
 body .contact-section {
   max-width: 800px; /* Begrænser hele sektionen */
   margin: 2rem auto; /* 2rem top/bund + auto højre/venstre (centrerer) */
@@ -386,5 +408,41 @@ body #contact-form .btn {
   margin-top: 0.5rem;
 }
 body #contact-form .btn:hover {
-  background-color: rgb(204.4956896552, 91.974137931, 22.5043103448);
+  background-color: #cc6219;
+}
+body footer {
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+body footer .footer-content {
+  display: flex;
+  flex-wrap: wrap; /* ← tillader at elementerne wrapper */
+  gap: 5rem;
+  align-items: center;
+}
+body footer p {
+  margin: 0;
+  color: #137786;
+}
+body footer .footer-contact {
+  color: #137786;
+  text-decoration: none;
+  font-weight: 800;
+}
+body footer .footer-contact:hover {
+  text-decoration: underline;
+}
+body footer .footer-socials {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto; /* ← skubber sociale ikoner til højre */
+}
+body footer .footer-socials a {
+  color: #137786;
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+}
+body footer .footer-socials a:hover {
+  color: #570c52;
 }/*# sourceMappingURL=style.css.map */

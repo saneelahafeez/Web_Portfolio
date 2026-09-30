@@ -287,6 +287,7 @@ nav .logo img {
 .projects {
     // scroll-margin-top: 70px;
     padding: 3rem 0;
+    
 
 }
 
@@ -310,9 +311,7 @@ nav .logo img {
     box-shadow: 0 4px 20px rgba(0,0,0,.06);
 }
 
-body.dark .project-card {
-
-    body.dark {
+body.dark {
     background-color: #1a1a1a;
     color: #eaeaea;
     
@@ -332,11 +331,21 @@ body.dark .project-card {
     a {
         color: #5dc7d6;
     }
-     
- }
-   
+}
+// projekt kort ease out
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
+.project-card {
+    animation: fadeIn 1s ease-out;
+}
 .project-image {
     // background-color: #2b3a42;
     // display: flex;
@@ -442,6 +451,19 @@ body.dark .project-card {
     background-color: var(--card);  
  }
 
+ .arrows button {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(19, 119, 134, 0.4);
+    color: #137786;
+    
+    &:hover {
+        background-color: #137786;
+        color: #fff;
+        transform: scale(1.1);
+        border-color: #137786;
+    }
+}
+
 
 //  kontakt formular 
 
@@ -502,7 +524,51 @@ body.dark .project-card {
         margin-top: 0.5rem;
 
         &:hover {
-            background-color: darken(partial.$text-color, 10%);
+            background-color: #cc6219;
+        }
+    }
+}
+
+footer {
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;           /* ← tillader at elementerne wrapper */
+        gap: 5rem;
+        align-items: center;
+    }
+
+    p {
+        margin: 0;
+        color: partial.$subheadings;
+    }
+
+    .footer-contact {
+        color: partial.$subheadings;
+        text-decoration: none;
+        font-weight: 800;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .footer-socials {
+        display: flex;
+        gap: 2rem;
+        margin-left: auto;         /* ← skubber sociale ikoner til højre */
+
+        a {
+            color: partial.$subheadings;
+            font-size: 2.5rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: partial.$nav-textcolor;
+            }
         }
     }
 }
