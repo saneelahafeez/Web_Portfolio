@@ -12,9 +12,9 @@ import { projectsData } from "./data/projects.js";
 const navg = new nav("img/LOGO.png", "Forsiden", "Projekter", "Om mig", "Kontakt");
 
 const aboutme = new aboutMe(
-    "Teknologi og kreativitet i samspil",
-    "Jeg tror på, at teknologi og kreativitet går hånd i hånd. Derfor kombinerer jeg over 20 års erfaring med projektledelse og kommunikation med en passion for digitalt design, content creation og AI-understøttede workflows.",
-    "Jeg omsætte komplekse idéer til klart og engagerende indhold – uanset om det er en <strong>brand identity</strong>, en <strong>digital kampagne</strong> eller en <strong>optimeret arbejdsproces</strong>. Jeg bruger teknologien som et værktøj til at skabe rum for det, der virkelig betyder noget: Kreativitet, strategi og menneskelig kontakt. Jeg designer løsninger, der ikke bare ser godt ud, men også gør arbejdsdagen og budskabet bedre.",
+    "Lad os skabe noget der virker",
+    "<strong>Velkommen</strong> - Mit navn er <strong> Saneela Hafeez</strong>, og jeg tør godt sige det højt: <strong>teknologi</strong> og <strong>kreativitet</strong> løfter hinanden.",
+    "Med en baggrund som eksportingeniør og flere års erfaring inden for projektledelse og kommunikation kombinerer jeg faglig tyngde med en passion for <strong>digitalt design, content creation og AI-understøttede workflows</strong>. <br> <br> Efter en frugtbar karrierepause har jeg genoptaget den kreative side af mig selv – og jeg er klar til at tage fat. Så tag et kig rundt, og lad os tage en snak, hvis du kan se mulighederne foran os.",
     "Se projekter",
     "Kontakt mig",
     "img/profilimg_tech.png"
@@ -22,12 +22,11 @@ const aboutme = new aboutMe(
 
 const mySkills = new process(
     "Om mig",
-    "Faglige færdigheder",
+    "Personlige Kompetancer",
+    "Jeg arbejder struktureret og <strong>analytisk</strong> med fokus på kvalitet i opgaveløsningen. Min baggrund inden for eksport, projektkoordinering, kundeservice og digital udvikling giver mig en bred forretningsforståelse og evnen til hurtigt at sætte mig ind i nye komplekse opgaver. Dette afspejler sig i mine stærkeste soft skills:.",
+    "img/softskills.png","Problemløsning","Samarbejde","Kommunikationsevner","Kreativitet","Faglige Færdigheder",
     "Jeg arbejder struktureret og analytisk med fokus på problemløsning, koordinering og kvalitet i opgaveløsningen. Min baggrund inden for eksport, projektkoordinering, kundeservice og digital udvikling giver mig en bred forretningsforståelse og evnen til hurtigt at sætte mig ind i nye komplekse opgaver.",
-    "img/softskills.png",
-    "Kompetancer",
-    "Jeg arbejder struktureret og analytisk med fokus på problemløsning, koordinering og kvalitet i opgaveløsningen. Min baggrund inden for eksport, projektkoordinering, kundeservice og digital udvikling giver mig en bred forretningsforståelse og evnen til hurtigt at sætte mig ind i nye komplekse opgaver.",
-    "img/softskills.png"
+    "img/hardskills_.jpg","UI/UX","Figma","Teams","Indesign"
 );
 
 const services = new Services("Hvad jeg kan", "Fra proces til løsning", [

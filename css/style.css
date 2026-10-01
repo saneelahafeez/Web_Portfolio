@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /*Variabler*/
+/* --- TYPOGRAFI --- */
+/* Størrelser (rem) */
+/* Vægte */
 /*Variabler de deklareres i toppen af vores stylesheet og de er globale.
 Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i blokken.*/
 /*Mixin er en måde at genbruge kode på. Vi kan tage kode som bruges flere steder og samle det i en mixin*/
@@ -14,7 +17,6 @@ html {
 }
 
 body {
-  background-color: #efefef;
   color: #333;
 }
 body.dark {
@@ -23,6 +25,15 @@ body.dark {
 }
 body {
   margin: 0;
+}
+
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 body {
@@ -115,10 +126,6 @@ body .about-me .info-aboutme h1 {
   font-size: 30px;
   margin-bottom: 1rem;
 }
-body .about-me .info-aboutme p {
-  line-height: 1.7;
-  padding-bottom: 15px;
-}
 body .about-me .info-aboutme strong {
   color: #3c1763;
 }
@@ -148,29 +155,53 @@ body .about-me img {
   max-width: 100%;
 }
 body .myprocess {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 body .myprocess h1 {
   font-weight: 700;
+  margin-top: 5px;
 }
 body .myprocess .info-myprocess {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin-bottom: 5px;
 }
-body .myprocess .info-myprocess div h2 {
+body .myprocess .info-myprocess .text-content h2 {
   font-size: 25px;
 }
-body .myprocess .info-myprocess div p {
-  font-size: 18px;
-  margin-right: 25px;
-}
 body .myprocess .info-myprocess img {
-  height: 350px;
-  width: 475px;
+  width: 100%;
+  max-width: 350px; /* Sætter en fast maks-bredde */
+  height: 300px; /* Låser højden, så begge billeder er lige høje */
+  -o-object-fit: contain;
+     object-fit: contain; /* Viser hele illustrationen uden at skære i den */
+  flex-shrink: 0; /* Forhindrer billedet i at blive klemt af teksten */
+  border-radius: 15px;
+}
+body .myprocess .info-myprocess .nøgleord-tags {
+  display: flex; /* Sætter dem på række */
+  flex-wrap: wrap; /* Gør at de hopper ned på næste linje, hvis skærmen er for lille */
+  gap: 15px; /* Afstand mellem hver knap */
+  margin-top: 25px; /* Afstand op til din tekst-paragraf */
+}
+body .myprocess .info-myprocess {
+  /* nøgleordne*/
+}
+body .myprocess .info-myprocess .nøgleord-tags span {
+  color: #570c52; /* Mørk tekstfarve */
+  padding: 6px 4px; /* Gør knapperne større indvendigt */
+  font-weight: 600; /* Gør teksten en smule fed */
+  font-size: 0.9rem; /* Lidt mindre tekst end din brødtekst */
+}
+body .myprocess .info-myprocess span:not(:last-child)::after {
+  content: "|";
+  margin: 0 15px;
+  color: rgba(87, 12, 82, 0.35);
+  font-weight: 400;
 }
 body .services {
   padding: 5rem 0rem;
@@ -433,7 +464,7 @@ body #contact-form .btn {
   margin-top: 0.5rem;
 }
 body #contact-form .btn:hover {
-  background-color: #cc6219;
+  background-color: #570c52;
 }
 body footer {
   padding: 2rem 0;

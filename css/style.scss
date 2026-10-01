@@ -12,7 +12,7 @@ html {
 
     
     body {
-    background-color: #efefef;
+    // background-color: #efefef;
     color: #333;
     &.dark {
         background-color: #333;
@@ -20,6 +20,14 @@ html {
     }margin: 0
 }
 
+p {
+    font-family: partial.$font;       // Sikrer at alle p'er bruger din font
+    font-size: 1rem;                 // Standard størrelse (ca. 16px)
+    line-height: 1.5;                // God luft mellem linjerne
+    color: partial.$text-color;       // sort
+    margin-top: 0;                    // Fjerner browserens standard margin i toppen
+    margin-bottom: 1rem;              // Ensartet afstand under alle afsnit
+}
 
 body{
 
@@ -144,10 +152,10 @@ nav .logo img {
 
         }
 
-        p{
-            line-height: 1.7;
-            padding-bottom: 15px;
-        }
+        // p{
+        //     line-height: 1.7;
+        //     padding-bottom: 15px;
+        // }
 
         strong {
 
@@ -193,40 +201,78 @@ nav .logo img {
 
 .myprocess {
 
-    scroll-margin-top: 70px;
+    scroll-margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     h1{ 
 
         font-weight: 700;
+        margin-top: 5px;
     }
+
+
 
     .info-myprocess{
 
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        margin-bottom: 5px;
 
-        div{
+        .text-content{
             h2{
 
                 font-size: 25px;
             }
 
-            p{
-                font-size: 18px;
-               margin-right: 25px;
-            }
+            // p{
+            //     font-size: 18px;
+            //     margin-right: 25px;
+            //     line-height: 1.5;
+            //     color: #000000;
+            // }
+
+        
         }
+
+    img {
+    width: 100%;
+        max-width: 350px;           /* Sætter en fast maks-bredde */
+        height: 300px;              /* Låser højden, så begge billeder er lige høje */
+        object-fit: contain;        /* Viser hele illustrationen uden at skære i den */
+        flex-shrink: 0;             /* Forhindrer billedet i at blive klemt af teksten */
+        border-radius: 15px;
+} 
+
+    .nøgleord-tags {
+        display: flex;       /* Sætter dem på række */
+        flex-wrap: wrap;     /* Gør at de hopper ned på næste linje, hvis skærmen er for lille */
+        gap: 15px;           /* Afstand mellem hver knap */
+        margin-top: 25px;    /* Afstand op til din tekst-paragraf */
+    }
+
+    /* nøgleordne*/
+.nøgleord-tags span {
+    
+    color: partial.$nav-textcolor;            /* Mørk tekstfarve */
+    padding: 6px 4px;         /* Gør knapperne større indvendigt */
+    font-weight: 600;          /* Gør teksten en smule fed */
+    font-size: 0.9rem;         /* Lidt mindre tekst end din brødtekst */
+
+}
+
+span:not(:last-child)::after {
+    content: "|";
+    margin: 0 15px;
+    color: rgba(partial.$nav-textcolor, 0.35);
+    font-weight: 400;
+}
+
         
 
-        img{ 
-
-            height: 350px;
-            width: 475px;
-
-        }
+       
     }
 
 
@@ -571,7 +617,7 @@ body.dark {
         margin-top: 0.5rem;
 
         &:hover {
-            background-color: #cc6219;
+            background-color: partial.$nav-textcolor;
         }
     }
 }
