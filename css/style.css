@@ -121,21 +121,21 @@ body .about-me .info-aboutme {
   flex: 1;
   max-width: 620px;
 }
-body .about-me h1 {
+body .about-me .info-aboutme h1 {
   margin-left: 0;
   font-size: 30px;
   margin-bottom: 1rem;
 }
-body .about-me strong {
+body .about-me .info-aboutme strong {
   color: #3c1763;
 }
-body .about-me div {
+body .about-me .info-aboutme div {
   display: flex;
   flex-direction: row;
   gap: 30px;
   margin-left: 0;
 }
-body .about-me div a {
+body .about-me .info-aboutme div a {
   text-decoration: none;
   font-size: 25px;
   color: #3c1763;
@@ -143,10 +143,10 @@ body .about-me div a {
   border-radius: 5px;
   padding: 10px 25px;
 }
-body .about-me div a:hover {
+body .about-me .info-aboutme div a:hover {
   background-color: rgb(30, 13, 68);
 }
-body img {
+body .about-me img {
   width: 375px;
   height: auto;
   -o-object-fit: cover;
