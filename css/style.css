@@ -121,21 +121,21 @@ body .about-me .info-aboutme {
   flex: 1;
   max-width: 620px;
 }
-body .about-me .info-aboutme h1 {
+body .about-me h1 {
   margin-left: 0;
   font-size: 30px;
   margin-bottom: 1rem;
 }
-body .about-me .info-aboutme strong {
+body .about-me strong {
   color: #3c1763;
 }
-body .about-me .info-aboutme div {
+body .about-me div {
   display: flex;
   flex-direction: row;
   gap: 30px;
   margin-left: 0;
 }
-body .about-me .info-aboutme div a {
+body .about-me div a {
   text-decoration: none;
   font-size: 25px;
   color: #3c1763;
@@ -143,37 +143,38 @@ body .about-me .info-aboutme div a {
   border-radius: 5px;
   padding: 10px 25px;
 }
-body .about-me .info-aboutme div a:hover {
+body .about-me div a:hover {
   background-color: rgb(30, 13, 68);
 }
-body .about-me img {
-  height: 425px;
+body img {
   width: 375px;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 130px 1px 130px 1px;
   max-width: 100%;
 }
-body .myprocess {
+
+.myprocess {
   scroll-margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-body .myprocess h1 {
+.myprocess h1 {
   font-weight: 700;
   margin-top: 5px;
 }
-body .myprocess .info-myprocess {
+.myprocess .info-myprocess {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   margin-bottom: 5px;
 }
-body .myprocess .info-myprocess .text-content h2 {
+.myprocess .info-myprocess .text-content h2 {
   font-size: 25px;
 }
-body .myprocess .info-myprocess img {
+.myprocess .info-myprocess img {
   width: 100%;
   max-width: 350px; /* Sætter en fast maks-bredde */
   height: 300px; /* Låser højden, så begge billeder er lige høje */
@@ -182,59 +183,65 @@ body .myprocess .info-myprocess img {
   flex-shrink: 0; /* Forhindrer billedet i at blive klemt af teksten */
   border-radius: 15px;
 }
-body .myprocess .info-myprocess .nøgleord-tags {
+.myprocess .info-myprocess .nøgleord-tags {
   display: flex; /* Sætter dem på række */
   flex-wrap: wrap; /* Gør at de hopper ned på næste linje, hvis skærmen er for lille */
   gap: 15px; /* Afstand mellem hver knap */
   margin-top: 25px; /* Afstand op til din tekst-paragraf */
 }
-body .myprocess .info-myprocess {
+.myprocess .info-myprocess {
   /* nøgleordne*/
 }
-body .myprocess .info-myprocess .nøgleord-tags span {
+.myprocess .info-myprocess .nøgleord-tags span {
   color: #570c52; /* Mørk tekstfarve */
   padding: 6px 4px; /* Gør knapperne større indvendigt */
   font-weight: 600; /* Gør teksten en smule fed */
   font-size: 0.9rem; /* Lidt mindre tekst end din brødtekst */
 }
-body .myprocess .info-myprocess span:not(:last-child)::after {
+.myprocess .info-myprocess span:not(:last-child)::after {
   content: "|";
   margin: 0 15px;
   color: rgba(87, 12, 82, 0.35);
   font-weight: 400;
 }
-body .services {
+
+.services {
   padding: 5rem 0rem;
   max-width: 1400px;
   margin: 0 auto;
 }
-body .services .subheading {
+
+.services .subheading {
   color: #570c52;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   letter-spacing: 0.2px;
 }
-body .services h2 {
+
+.services h2 {
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
   color: #137786; /* lilla*/
   margin-bottom: 2.5rem;
   letter-spacing: -0.5px;
 }
-body .service-grid {
+
+.service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.2rem;
 }
-body .service-card {
+
+.service-card {
   background-color: rgb(187, 227, 229); /* lys blaa */
   padding: 1.8rem 1.5rem;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
 }
-body .service-card i {
+
+.service-card i {
   font-size: 2.5rem;
   color: #137786;
   background-color: rgba(27, 164, 185, 0.12); /* svag teal-baggrund */
@@ -246,44 +253,51 @@ body .service-card i {
   justify-content: center;
   margin-bottom: 1.2rem;
 }
-body .service-card {
+
+.service-card {
   transition: all 0.3s ease;
 }
-body .service-card:hover {
+.service-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-body .service-card:hover i {
+.service-card:hover i {
   transform: scale(1.15);
 }
-body .service-card i {
+.service-card i {
   transition: transform 0.3s ease;
 }
-body .service-card h3 {
+
+.service-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
   color: #1E2E3C;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
-body .service-card p {
+
+.service-card p {
   font-size: 0.95rem;
   color: #49483D; /* dæmpet mørk */
   line-height: 1.6;
   margin: 0;
 }
-body .projects {
+
+.projects {
   padding: 3rem 0;
 }
-body .projects h2 {
+
+.projects h2 {
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
   margin-bottom: 0.4rem;
   letter-spacing: -0.5px;
 }
-body .projects .intro {
+
+.projects .intro {
   margin-bottom: 2rem;
 }
-body .project-card {
+
+.project-card {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   background-color: #fff;
@@ -291,23 +305,25 @@ body .project-card {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
-body body.dark {
+
+body.dark {
   background-color: #1a1a1a;
   color: #eaeaea;
 }
-body body.dark .service-card {
+body.dark .service-card {
   background-color: #2a2a2a;
   color: #eaeaea;
 }
-body body.dark .project-card {
+body.dark .project-card {
   background-color: #2a2a2a;
 }
-body body.dark header {
+body.dark header {
   background-color: #1a1a1a;
 }
-body body.dark a {
+body.dark a {
   color: #5dc7d6;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -316,77 +332,92 @@ body body.dark a {
     opacity: 1;
   }
 }
-body .project-card {
+.project-card {
   animation: fadeIn 1s ease-out;
 }
-body .project-image {
+
+.project-image {
   min-height: 320px;
   background-size: cover;
   background-position: center;
 }
-body .project-info {
+
+.project-info {
   padding: 2.5rem;
 }
-body .project-info .meta {
+
+.project-info .meta {
   color: var(--muted);
   font-size: 0.85rem;
   margin-bottom: 0.6rem;
 }
-body .project-info h3 {
+
+.project-info h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
-body .project-info p {
+
+.project-info p {
   color: var(--text);
   opacity: 0.85;
   margin-bottom: 1.2rem;
 }
-body .read-more {
+
+.read-more {
   color: var(--accent);
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
   margin-bottom: 1.5rem;
 }
-body .read-more:hover {
+
+.read-more:hover {
   text-decoration: underline;
 }
-body .project-tags {
+
+.project-tags {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
-body .tag {
+
+.tag {
   border: 1px solid var(--border);
   padding: 0.3rem 0.8rem;
   border-radius: 6px;
   font-size: 0.8rem;
   color: var(--muted);
 }
-body .project-controls {
+
+.project-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1.5rem;
 }
-body .dots {
+
+.dots {
   display: flex;
   gap: 0.5rem;
 }
-body .dot {
+
+.dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: var(--border);
 }
-body .dot.active {
+
+.dot.active {
   background-color: var(--accent);
 }
-body .arrows {
+
+.arrows {
   display: flex;
   gap: 0.6rem;
 }
-body .arrows button {
+
+.arrows button {
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -398,39 +429,43 @@ body .arrows button {
   place-items: center;
   transition: background-color 0.2s;
 }
-body .arrows button:hover {
+
+.arrows button:hover {
   background-color: var(--card);
 }
-body .arrows button {
+
+.arrows button {
   transition: all 0.3s ease;
   border: 1px solid rgba(19, 119, 134, 0.4);
   color: #137786;
 }
-body .arrows button:hover {
+.arrows button:hover {
   background-color: #137786;
   color: #fff;
   transform: scale(1.1);
   border-color: #137786;
 }
-body .contact-section {
+
+.contact-section {
   max-width: 800px; /* Begrænser hele sektionen */
   margin: 2rem auto; /* 2rem top/bund + auto højre/venstre (centrerer) */
   padding: 0 1rem; /* Luft i siderne på mobil */
 }
-body #contact-form {
+
+#contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
   margin-top: 3rem;
 }
-body #contact-form label {
+#contact-form label {
   font-weight: 600;
   color: #1E2E3C;
   font-size: 1rem;
   margin-bottom: -0.6rem; /* ← trækker input tættere på label */
 }
-body #contact-form input,
-body #contact-form textarea {
+#contact-form input,
+#contact-form textarea {
   width: 100%;
   padding: 0.7rem 0.9rem;
   border: 1px solid rgba(73, 72, 61, 0.25);
@@ -441,17 +476,17 @@ body #contact-form textarea {
   color: #1E2E3C;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-body #contact-form input:focus,
-body #contact-form textarea:focus {
+#contact-form input:focus,
+#contact-form textarea:focus {
   outline: none;
   border-color: #137786; /* teal ved fokus */
   box-shadow: 0 0 0 3px rgba(27, 164, 185, 0.15);
 }
-body #contact-form textarea {
+#contact-form textarea {
   resize: vertical;
   min-height: 140px;
 }
-body #contact-form .btn {
+#contact-form .btn {
   background-color: #137786;
   color: #fff;
   border: none;
@@ -463,42 +498,101 @@ body #contact-form .btn {
   transition: background-color 0.2s ease;
   margin-top: 0.5rem;
 }
-body #contact-form .btn:hover {
+#contact-form .btn:hover {
   background-color: #570c52;
 }
-body footer {
+
+footer {
   padding: 2rem 0;
   margin-top: 4rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-body footer .footer-content {
+footer .footer-content {
   display: flex;
   flex-wrap: wrap; /* ← tillader at elementerne wrapper */
   gap: 5rem;
   align-items: center;
 }
-body footer p {
+footer p {
   margin: 0;
   color: #137786;
 }
-body footer .footer-contact {
+footer .footer-contact {
   color: #137786;
   text-decoration: none;
   font-weight: 800;
 }
-body footer .footer-contact:hover {
+footer .footer-contact:hover {
   text-decoration: underline;
 }
-body footer .footer-socials {
+footer .footer-socials {
   display: flex;
   gap: 2rem;
   margin-left: auto; /* ← skubber sociale ikoner til højre */
 }
-body footer .footer-socials a {
+footer .footer-socials a {
   color: #137786;
   font-size: 2.5rem;
   transition: color 0.3s ease;
 }
-body footer .footer-socials a:hover {
+footer .footer-socials a:hover {
   color: #570c52;
+}
+
+/* =========================================
+   MEDIA QUERY: TABLET (Max 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+  main {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* =========================================
+   MEDIA QUERY: MOBIL (Max 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  main {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .about-me {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 0;
+    align-items: center;
+    text-align: center;
+  }
+  .about-me img {
+    order: -1; /* ← HER: billedet hopper øverst */
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+  .myprocess .info-myprocess {
+    flex-direction: column;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    gap: 15px;
+  }
+  footer .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  footer .footer-socials {
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

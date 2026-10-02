@@ -143,7 +143,7 @@ nav .logo img {
         flex-direction: column;
         align-items: flex-start;
         flex:1;
-        max-width: 620px;
+        max-width: 620px; }
 
         h1{
             margin-left: 0;
@@ -184,13 +184,14 @@ nav .logo img {
         }
 
     }
-
     img{
-        height:425px;
+       
+        // height:425px; før media query havde j dette, fungerede fint
         width: 375px;
+        height: auto;
         object-fit: cover;    
         border-radius: 130px  1px  130px  1px;
-        max-width: 100%;
+        max-width: 100%
         // border-radius: 20px;
         // flex-shrink: 0;
 
@@ -665,4 +666,79 @@ footer {
         }
     }
 }
+
+
+/* =========================================
+   MEDIA QUERY: TABLET (Max 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+
+    main {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+/* =========================================
+   MEDIA QUERY: MOBIL (Max 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    main {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .about-me {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 0;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .about-me img {
+        order: -1;                   /* ← HER: billedet hopper øverst */
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .myprocess .info-myprocess {
+        flex-direction: column;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    footer .footer-socials {
+        margin-left: 0;
+    }
+
 }
