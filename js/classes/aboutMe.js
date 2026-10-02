@@ -25,9 +25,9 @@ export class aboutMe {
         </div>
 
 
-        
+        <div class="about-img">
             <img src="${this.img}" alt="my picture">
-
+        </div>
 
     </section>    
         `;

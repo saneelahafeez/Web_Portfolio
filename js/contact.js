@@ -110,14 +110,14 @@ class ContactForm {
             return;
         }
 
-        // Validér e-mail — brug browserens indbyggede validering
+        // Valider e-mail
         if (!emailField.validity.valid) {
             this.showFeedback('Udfyld venligst en gyldig e-mail.', 'error', 'email');
             emailField.focus();
             return;
         }
 
-        // Validér besked
+        // Valider beskeden
         if (!besked) {
             this.showFeedback('Udfyld venligst en besked.', 'error', 'besked');
             beskedField.focus();
@@ -144,7 +144,7 @@ class ContactForm {
         });
     }
 
-    // Markerer ét felt som ugyldigt
+    // Markerer felt som ugyldigt
     markFieldError(inputId) {
         const field = document.getElementById(inputId);
         if (!field) return;
@@ -159,7 +159,7 @@ class ContactForm {
 
         if (inputId) this.markFieldError(inputId);
 
-        // Skift ARIA-rolle og live-region afhængigt af type
+        // Skift ARIA-rolle, type
         if (type === 'error') {
             this.feedback.setAttribute('role', 'alert');
             this.feedback.setAttribute('aria-live', 'assertive');
@@ -186,5 +186,5 @@ document.body.innerHTML =
         contactForm.render() +
     "</main>";
 
-// Aktivér formularen EFTER den er indsat i DOM'en
+// Aktiver formularen EFTER den er indsat i DOM'en
 contactForm.init();

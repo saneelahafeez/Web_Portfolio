@@ -21,9 +21,9 @@ html {
 }
 
 p {
-    font-family: partial.$font;       // Sikrer at alle p'er bruger din font
-    font-size: 1rem;                 // Standard størrelse (ca. 16px)
-    line-height: 1.5;                // God luft mellem linjerne
+    font-family: partial.$font;       // Sikrer at alle p'er bruger samme partial font
+    font-size: 1rem;                 // Standard størrelse som svare til ca 16px
+    line-height: partial.$line-height-body;           
     color: partial.$text-color;       // sort
     margin-top: 0;                    // Fjerner browserens standard margin i toppen
     margin-bottom: 1rem;              // Ensartet afstand under alle afsnit
@@ -40,11 +40,10 @@ body{
     // margin-right: 200px;
     
 
-    /* 1. Ensure the body spans the full height of the viewport */
     min-height: 100vh;
 
 
-    /* Læg margin på main i stedet – så headeren kan fylde hele bredden */
+    /* Lægger margin på main så headeren kan fylde hele bredden */
     main {
         margin-left: 200px;
         margin-right: 200px;
@@ -59,7 +58,7 @@ header {
     background-color: #fff;
     color: #fff;
     font-family: partial.$font;
-    // 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 
@@ -170,9 +169,11 @@ nav .logo img {
                 border: solid 2px rgb(88, 22, 164); 
                 border-radius: 5px;
                 padding: 10px 25px;
+                margin-top: 15px;
 
                 &:hover{
                     background-color: rgb(30, 13, 68);
+                    color: #efefef;
                 }
             }
 
@@ -646,10 +647,17 @@ footer {
         }
     }
 
+    .footer-content{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
     .footer-socials {
         display: flex;
         gap: 2rem;
         margin-left: auto;         /* ← skubber sociale ikoner til højre */
+        padding-right: 10px;
+        padding-left: 10px;
 
         a {
             color: partial.$subheadings;
@@ -732,7 +740,7 @@ footer {
     footer .footer-content {
         flex-direction: column;
         gap: 2rem;
-        align-items: flex-start;
+        align-items: center;
     }
 
     footer .footer-socials {

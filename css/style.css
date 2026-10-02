@@ -3,8 +3,6 @@
 /* --- TYPOGRAFI --- */
 /* Størrelser (rem) */
 /* Vægte */
-/*Variabler de deklareres i toppen af vores stylesheet og de er globale.
-Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i blokken.*/
 /*Mixin er en måde at genbruge kode på. Vi kan tage kode som bruges flere steder og samle det i en mixin*/
 /*Partial fil hentes ind i style.scss som et modul. Filen er en samling af variabler, mixins og funktioner som kan genbruges*/
 * {
@@ -30,7 +28,7 @@ body {
 p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #000000;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -41,9 +39,8 @@ body {
   background-color: #F5F5F5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f7f6f4;
-  /* 1. Ensure the body spans the full height of the viewport */
   min-height: 100vh;
-  /* Læg margin på main i stedet – så headeren kan fylde hele bredden */
+  /* Lægger margin på main så headeren kan fylde hele bredden */
 }
 body main {
   margin-left: 200px;
@@ -142,9 +139,11 @@ body .about-me .info-aboutme div a {
   border: solid 2px rgb(88, 22, 164);
   border-radius: 5px;
   padding: 10px 25px;
+  margin-top: 15px;
 }
 body .about-me .info-aboutme div a:hover {
   background-color: rgb(30, 13, 68);
+  color: #efefef;
 }
 body .about-me img {
   width: 375px;
@@ -525,10 +524,16 @@ footer .footer-contact {
 footer .footer-contact:hover {
   text-decoration: underline;
 }
+footer .footer-content {
+  margin-right: 10px;
+  margin-left: 10px;
+}
 footer .footer-socials {
   display: flex;
   gap: 2rem;
   margin-left: auto; /* ← skubber sociale ikoner til højre */
+  padding-right: 10px;
+  padding-left: 10px;
 }
 footer .footer-socials a {
   color: #137786;
@@ -590,7 +595,7 @@ footer .footer-socials a:hover {
   footer .footer-content {
     flex-direction: column;
     gap: 2rem;
-    align-items: flex-start;
+    align-items: center;
   }
   footer .footer-socials {
     margin-left: 0;
